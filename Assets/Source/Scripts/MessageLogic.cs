@@ -21,6 +21,12 @@ public class MessageLogic : MonoBehaviour
                     _messages[_count].SetActive(false);
                     _currency.SetActive(true);
                 }
+               
+                if (_task.activeSelf)
+                {
+                    gameObject.SetActive(false);
+                    return;
+                }
 
                 _task.SetActive(true);
                 return;

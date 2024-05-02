@@ -10,4 +10,12 @@ public class PlayerBalance : MonoBehaviour
     {
         _valueOnDisplay.text = $"Текущий баланс: {_value} руб.";
     }
+
+    public float GetBalance() => _value;
+
+    public void SetNewValue(float value)
+    {
+        _value = value;
+        _valueOnDisplay.text = $"Текущий баланс: {_value} руб.";
+    }
 }
