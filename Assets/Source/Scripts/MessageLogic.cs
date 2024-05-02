@@ -4,6 +4,9 @@ using UnityEngine;
 public class MessageLogic : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _messages;
+    [SerializeField] private GameObject _currency;
+    [SerializeField] private GameObject _task;
+    [SerializeField] private bool _isFirst;
 
     private int _count = 0;
 
@@ -13,6 +16,13 @@ public class MessageLogic : MonoBehaviour
         {
             if (_count == _messages.Count - 1)
             {
+                if (_isFirst)
+                {
+                    _messages[_count].SetActive(false);
+                    _currency.SetActive(true);
+                }
+
+                _task.SetActive(true);
                 return;
             }
 
