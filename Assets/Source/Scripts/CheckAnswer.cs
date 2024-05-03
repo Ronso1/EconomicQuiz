@@ -13,8 +13,7 @@ public class CheckAnswer : MonoBehaviour
         var currentValue = 0f;
         currentValue = _playerBalance.GetBalance();
         currentValue -= _result;
-        _playerBalance.SetNewValue(currentValue);
-        _task.SetActive(false);
+        _playerBalance.SetNewValue(currentValue);     
 
 
         if (_isRight)
@@ -25,5 +24,8 @@ public class CheckAnswer : MonoBehaviour
         {
             _gameHandler.ShowBadMessage();
         }
-    }
+
+        _task.SetActive(false);
+        StartCoroutine(_gameHandler.LoadNextSection());       
+    }  
 }
